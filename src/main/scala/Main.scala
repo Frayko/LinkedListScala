@@ -4,11 +4,11 @@ object Main extends App {
     val list = new LinkedList[Int]()
 
     for(i <- 0 until count) {
-      list.pushFront(typeBuilder.create().asInstanceOf[Int])
+      list.pushFront(typeBuilder.create.asInstanceOf[Int])
     }
 
     val start = System.nanoTime
-    list.sort(typeBuilder.getTypeComparator())
+    list.sort(typeBuilder.typeComparator)
     val time = (System.nanoTime - start).toDouble / 1_000_000_000.0
     System.out.printf("Список был успешно отсортирован за %.3f cек\n", time)
   }

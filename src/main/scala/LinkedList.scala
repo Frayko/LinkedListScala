@@ -213,19 +213,6 @@ class LinkedList[T]() extends List[T] with Serializable {
     }
   }
 
-  def reverseIterator: util.Iterator[T] = new util.Iterator[T]() {
-    var counter: Int = 0
-    var buf: Node = root
-
-    override def hasNext: Boolean = this.counter < size
-
-    override def next: T = {
-      buf = buf.prev
-      counter += 1
-      buf.data
-    }
-  }
-
   @throws[IOException]
   def save(file: File): Unit = {
     val oos: ObjectOutputStream = new ObjectOutputStream(new FileOutputStream(file, false))

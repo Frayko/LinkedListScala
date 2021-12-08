@@ -1,5 +1,5 @@
 trait TypeBuilder {
-  def getTypeName(): String
-  def create(): Any
-  def getTypeComparator(): Comparator
+  def typeName: String
+  def create: Any
+  def typeComparator: Comparator
 }

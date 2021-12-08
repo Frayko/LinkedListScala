@@ -6,9 +6,9 @@ class IntegerType() extends TypeBuilder {
     this.range = range
   }
 
-  override def getTypeName() = "Integer"
+  override def typeName = "Integer"
 
-  override def create(): Int = (Math.random * range).toInt
+  override def create: Int = (Math.random * range).toInt
 
-  override def getTypeComparator(): Comparator = (o1: Any, o2: Any) => o1.asInstanceOf[Int] - o2.asInstanceOf[Int]
+  override def typeComparator: Comparator = (o1: Any, o2: Any) => o1.asInstanceOf[Int] - o2.asInstanceOf[Int]
 }

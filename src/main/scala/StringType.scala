@@ -6,9 +6,9 @@ class StringType() extends TypeBuilder {
     this.range = range
   }
 
-  override def getTypeName() = "String"
+  override def typeName = "String"
 
-  override def create(): String = {
+  override def create: String = {
     var numberOfChar = 0
     val s = new StringBuilder
     for (i <- 0 until range) {
@@ -19,5 +19,5 @@ class StringType() extends TypeBuilder {
     s.toString
   }
 
-  override def getTypeComparator(): Comparator = (o1: Any, o2: Any) => o1.asInstanceOf[String].compareTo(o2.asInstanceOf[String])
+  override def typeComparator: Comparator = (o1: Any, o2: Any) => o1.asInstanceOf[String].compareTo(o2.asInstanceOf[String])
 }
