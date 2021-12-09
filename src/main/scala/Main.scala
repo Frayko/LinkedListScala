@@ -10,7 +10,7 @@ object Main extends App {
     val start = System.nanoTime
     list.sort(typeBuilder.typeComparator)
     val time = (System.nanoTime - start).toDouble / 1_000_000_000.0
-    System.out.printf("Список был успешно отсортирован за %.3f cек\n", time)
+    println(s"Список из ${list.getSize} элементов был успешно отсортирован за ${BigDecimal(time).setScale(3, BigDecimal.RoundingMode.HALF_UP)} cек")
   }
 
   test(100)
